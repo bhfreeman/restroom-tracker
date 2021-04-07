@@ -1,0 +1,36 @@
+[
+    {
+      "business_name": "Shell Gas Station",
+      "street_address": "3208 E Indian School Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zipcode": "85018",
+      "location_type": "Gas Station",
+      "number_stalls": 2,
+      "ada_compliant": true,
+      "overall_rating": 1
+    },
+    {
+      "business_name": "Subway",
+      "street_address": "317 S Higley Rd",
+      "city": "Gilbert",
+      "state": "AZ",
+      "zipcode": "85297",
+      "location_type": "Restaurant",
+      "number_stalls": 2,
+      "ada_compliant": true,
+      "overall_rating": 2
+    },
+    {
+      "business_name": "Oregano's",
+      "street_address": "4900 E Speedway Blvd",
+      "city": "Tucson",
+      "state": "AZ",
+      "zipcode": "85712",
+      "location_type": "Restaurant",
+      "number_stalls": 4,
+      "ada_compliant": true,
+      "overall_rating": 4
+    }
+  ]
+  

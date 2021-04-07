@@ -11,6 +11,10 @@ Bathroom.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    business_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     street_address: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -34,16 +38,12 @@ Bathroom.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    location_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     number_stalls: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     ada_compliant: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     overall_rating: {
