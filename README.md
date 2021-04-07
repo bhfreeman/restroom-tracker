@@ -21,10 +21,11 @@ Ever in a new place and have an intestinal emergency? Want to know which stores 
 - Google Places API?
 - Our built api
 
-### New Packages to be used
+### Potential New Packages to be used
 - https://www.npmjs.com/package/validator
 - https://date-fns.org
 - https://nodemailer.com/about/
+- https://www.npmjs.com/package/multer
 
 ## Rough Breakdown of Tasks
 - Handlebars templates/partials/etc
