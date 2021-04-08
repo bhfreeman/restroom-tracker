@@ -1,11 +1,17 @@
 [
-    {
-    "comment": "Awful bathroom. Don't use."
+  {
+    "comment_text": "Awful bathroom. Don't use.",
+    "user_id": 1,
+    "review_id": 1
   },
-{
-    "comment": "Not too bad. Definitely bring your own toiluet paper though."
+  {
+    "comment_text": "Not too bad. Definitely bring your own toiluet paper though.",
+    "user_id": 2,
+    "review_id": 2
   },
-{
-    "comment": "Nice and clean, kinda smelly. Just plug your nose."
+  {
+    "comment_text": "Nice and clean, kinda smelly. Just plug your nose.",
+    "user_id": 3,
+    "review_id": 3
   }
 ]
