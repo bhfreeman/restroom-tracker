@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Bathroom, User, Review, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-// Get all bathrooms and join with reviews data
+// homepage
 router.get('/', async (req,res) => {
   try{
     res.render('homepage')
@@ -11,13 +11,19 @@ router.get('/', async (req,res) => {
   }
 })
 
-router.get("/bathroom", async (req, res) => {
+//search all bathrooms, with reviews, ordered
+router.get("/bathroom/:city:state", async (req, res) => {
   try {
     const bathroomData = await Bathroom.findAll({
+      where: {
+        city: req.params.city,
+        state: req.params.state
+      },
       include: [
         {
           model: Review,
-          attributes: ["title"],
+          attributes: ["title", "review_text", "timestamps"],
+          order: ["timestamps", "DESC"]
           //length of review displayed?
         },
       ],
@@ -38,33 +44,7 @@ router.get("/bathroom", async (req, res) => {
   }
 });
 
-//get reviews from users, display name of user and any comments
-router.get("/reviews/:id", async (req, res) => {
-  try {
-    const reviewData = await Review.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"]
-        },
-        {
-          model: Comment,
-          attributes: ["user_id"]
-        },
-      ],
-    });
-
-    const reviews = reviewData.get({ plain: true });
-
-    res.render("reviews", {
-      ...reviews,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
+//
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
@@ -85,8 +65,8 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
+// If the user is already logged in, redirect the request to another route
 router.get("/login", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect("/profile");
     return;
