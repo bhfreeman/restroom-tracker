@@ -3,6 +3,14 @@ const { Bathroom, User, Review, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Get all bathrooms and join with reviews data
+router.get('/', async (req,res) => {
+  try{
+    res.render('homepage')
+  }catch(err){
+    res.status(500).json(err);
+  }
+})
+
 router.get("/bathroom", async (req, res) => {
   try {
     const bathroomData = await Bathroom.findAll({

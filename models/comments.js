@@ -1,3 +1,4 @@
+const database = require('mime-db');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -11,7 +12,7 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,6 +24,7 @@ Comment.init(
       },
     },
     review_id: {
+      type: DataTypes.INTEGER,
       references: {
           model: 'review',
           key: 'id',
