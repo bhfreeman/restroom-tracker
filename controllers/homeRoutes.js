@@ -9,7 +9,7 @@ router.get('/', async (req,res) => {
   }catch(err){
     res.status(500).json(err);
   }
-})
+});
 
 //search all bathrooms, with reviews, ordered
 router.get("/bathroom/:city:state", async (req, res) => {
