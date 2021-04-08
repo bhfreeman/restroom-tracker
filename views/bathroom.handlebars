@@ -4,6 +4,9 @@
         <div class="tile">
             {{#each bathroom.review}}
                 {{>review}}
+                {{#each bathroom.review.comment}}
+                {{>comment}}
+                {{/each}}
             {{/each}}
         </div>
     </div>
