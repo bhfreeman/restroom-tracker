@@ -1,9 +1,16 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const session = require("express-session");
+const sequelizeStore = require("connect-session-sequelize")(session.Store);
+const { User, Review, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post("/login", async (req, res) => {
+
+///get myreviews
+router.get("/", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const reviewData = await User.findAll({
+        
+    });
 
     if (!userData) {
       res
