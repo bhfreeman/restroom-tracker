@@ -1,23 +1,35 @@
 const router = require('express').Router();
-const { Bathroom } = require('../../models');
+const { Bathroom, Review } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.get('/search', async (req, res) => {
     try {
       // Get all bathrooms, sorted by location
       const bathroomData = await Bathroom.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['city', 'ASC'], ['zipcode', 'ASC']],
+          include: [
+              {
+                  model: Review,
+                  attributes: ['title', 'review_text', 'user_id'],
+              }
+          ],
+          order: [['city', 'ASC'], ['zipcode', 'ASC']],
       });
-  
       // Serialize user data so templates can read it
-      const users = userData.map((project) => project.get({ plain: true }));
-  
-      // Pass serialized data into Handlebars.js template
-      res.render('homepage', { users });
+        const users = userData.map((project) => project.get({ plain: true }));
+      res.status(200).json(bathroomData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+router.get('/search/:id', async (req, res) => {
+    try {
+        const bathroomData = await Bathroom.findByPk(req.params.id);
+
+        res.status(200).json(bathroomData);
+    } catch (err) {
+        res.status(500).json(err);
+    }});
+    
 
 router.post('/search', async (req, res) => {
   try {
