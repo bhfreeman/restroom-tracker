@@ -1,10 +1,19 @@
-<div class="columns column is-full has-background-dark is-vcentered">
+<div class="columns column is-full has-background-dark is-vcentered search-form">
     <form class="column is-6 is-offset-3">
         <div class="field">
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input type="text" class="input" placeholder="Zipcode">
+                        <input type="text" class="input" placeholder="City" id="city-text">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input type="text" class="input" placeholder="2 Digit State Code" id="state-code">
                     </p>
                 </div>
             </div>
@@ -13,7 +22,7 @@
             <div class="field-body">
                 <div class="field">
                     <div class="control">
-                        <button class="button is-primary" id="search-button">
+                        <button class="button is-primary" id="search-button" type="submit">
                             Search
                         </button>
                     </div>
@@ -31,3 +40,5 @@
     </div>
 
 </div>
+
+<script src="./js/search.js"></script>
