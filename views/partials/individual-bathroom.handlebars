@@ -1,3 +1,28 @@
 <div class="tile is-12">
-    
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                {{ business_name}}
+            </p>
+            <button class="card-header-icon">
+                <span class="icon">
+                    <i class="fas"></i>
+                </span>
+            </button>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                Rating: {{ overall_rating }}
+            </div>
+            <div class="content">
+                Street Address: {{ street_address }}
+            </div>
+            <div class="content">
+                City: {{ city }}, State: {{ state }}
+            </div>
+            <div class="content">
+                Zipcode: {{ zipcode }}
+            </div>
+        </div>
+    </div>
 </div>
