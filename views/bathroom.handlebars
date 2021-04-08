@@ -1,7 +1,12 @@
 <div class="tile is-ancestor">
-    {{#each bathrooms}}
-        {{> individual-bathrooms }}
-    {{/each}}
-    {{#each review}}
-    {{/each}}
+    <div class="tile is-parent is-8">
+        {{#each bathrooms}}
+        {{> individual-bathroom }}
+        <div class="tile">
+            {{#each bathroom.review}}
+                {{>review}}
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
 </div>
