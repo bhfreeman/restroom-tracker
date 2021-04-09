@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="columns column is-full has-background-dark is-vcentered search-form">
+    <form class="column is-6 is-offset-3">
+        <div class="field">
+            <div class="field-body">
+                <div class="field">
+                    <h3 class="">Email: {{ email }}</h3>
+                </div>
+                <button class="button is-primary" id="email-button" type="submit">
+                            Update Email
+                </button>
+            </div>
+        </div>
+        <div class="field">
+            
+        </div>
+        <div class="field">
+            <div class="field-body" > 
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" id="search-button" type="submit">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
