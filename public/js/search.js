@@ -10,7 +10,7 @@ const searchFormHandler = async (event) => {
     const regex = new RegExp('^[A-Z]{2}$');
     console.log(state)
 
-    if (city && state.toUpperCase()) {
+    if (city && state) {
         if(regex.test(state.toUpperCase())){
           const url = `/bathroom/${titleCase(city)}/${state.toUpperCase()}`;
             const response = await fetch(url, {
