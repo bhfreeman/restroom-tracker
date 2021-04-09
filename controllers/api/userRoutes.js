@@ -1,6 +1,4 @@
 const router = require("express").Router();
-const session = require("express-session");
-const sequelizeStore = require("connect-session-sequelize")(session.Store);
 const { User, Review, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 

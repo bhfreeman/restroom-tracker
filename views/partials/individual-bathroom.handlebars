@@ -4,14 +4,17 @@
             <p class="card-header-title">
                 {{ business_name}}
             </p>
-            <button class="card-header-icon icon-text has-text-info">
+            <a href="/api/search/{{id}}">
+            <div class="card-header-icon">
+                <span class="icon">
+                    <i class="fas fa-info-circle"></i>
+                </span>
                 <span class="icon-text has-text-info">
-                    <span class="icon">
-                        <i class="fas fa-info-circle"></i>
-                    </span>
                     <span>Info</span>
                 </span>
-            </button>
+            </div>
+            
+            </a>
         </header>
         <div class="card-content">
             <div class="content">
