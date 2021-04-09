@@ -7,8 +7,8 @@ router.get("/", async (req, res) => {
     // Get all bathrooms, sorted by location
     const bathroomData = await Bathroom.findAll({});
     // Serialize user data so templates can read it
-    // const users = userData.map((project) => project.get({ plain: true }));
-    res.status(200).json(bathroomData);
+    const bathroom = bathroomData.map((bathroom) => bathroom.get({plain: true}))
+    res.render('search-results', bathroom)
   } catch (err) {
     res.status(500).json(err);
   }
