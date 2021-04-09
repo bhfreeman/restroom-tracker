@@ -3,7 +3,7 @@ const searchFormHandler = async (event) => {
   
     // Collect values from the login form
     const city = document.querySelector('#city-text').value.trim();
-    const state = document.querySelector('#state-code').toUpperCase().value.trim();
+    const state = document.querySelector('#state-code').value.trim();
     const regex = new RegExp('^[A-Z]{2}$');
 
     if (city && state) {
