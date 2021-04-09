@@ -17,24 +17,25 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const bathroomData = await Bathroom.findByPk(req.params.id, {
+      // include: [{all: true, nested: true, raw: true}],
       include: {
         model: Review,
-        attributes: ["title", "review_text", "createdAt", "user_id"],
+        raw: true,
+        attributes: ["id", "title", "review_text", "createdAt", "user_id"],
         include: [
           {
             model: Comment,
             include: { model: User, attributes: ["name", "email"] },
+            raw: true,
           },
-          { model: User, attributes: ["name", "email"] },
+          { model: User, attributes: ["name", "email"], raw: true },
         ],
       },
-      order: [
-        ["city", "ASC"],
-        ["zipcode", "ASC"],
-      ],
     });
 
-    res.status(200).json(bathroomData);
+    const bathroom = bathroomData.get({ plain: true });
+    res.render("bathroom", bathroom);
+    // res.status(200).json(bathroomData);
   } catch (err) {
     res.status(500).json(err);
   }

@@ -12,7 +12,7 @@ router.get('/', async (req,res) => {
 });
 
 //search all bathrooms, with reviews, ordered
-router.get("/bathroom/:city:state", async (req, res) => {
+router.get("/bathroom/:city/:state", async (req, res) => {
   try {
     const bathroomData = await Bathroom.findAll({
       where: {
@@ -22,8 +22,8 @@ router.get("/bathroom/:city:state", async (req, res) => {
       include: [
         {
           model: Review,
-          attributes: ["title", "review_text", "timestamps"],
-          order: ["timestamps", "DESC"]
+          // attributes: ["title", "review_text", "timestamps"],
+          // order: ["timestamps", "DESC"]
           //length of review displayed?
         },
       ],
@@ -35,7 +35,7 @@ router.get("/bathroom/:city:state", async (req, res) => {
     );
 
     // Pass serialized data and session flag into template
-    res.render("homepage", {
+    res.render("search-results", {
       bathrooms,
       logged_in: req.session.logged_in,
     });

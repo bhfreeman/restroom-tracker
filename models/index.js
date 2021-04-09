@@ -40,5 +40,6 @@ Comment.belongsTo(Review, {
 })
 
 
+
 // export models
 module.exports = { Bathroom, Comment, Review, User};

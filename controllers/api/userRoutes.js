@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
 
 
 //get my reviews
-router.get('/reviews', withAuth, (req, res) => {
+router.get('/reviews', withAuth, async (req, res) => {
     try{
       const userData = await User.findByPk({
           attributes: { exclude: ["password"] },
@@ -45,7 +45,7 @@ router.get('/reviews', withAuth, (req, res) => {
 });
 
 //get my comments
-router.get('/comments', withAuth, (req, res) => {
+router.get('/comments', withAuth, async (req, res) => {
     try{
       const userData = await User.findByPk({
         where: {
