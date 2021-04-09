@@ -1,11 +1,11 @@
 async function reviewFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector("").value.trim;
-    const review_text = document.querySelector("").value.trim;
+    const title = document.querySelector(".card-header").value;
+    const review_text = document.querySelector(".card-content").value;
 
     //create new review
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/reviews`, {
         method: "POST",
         body: JSON.stringify({
             title,
@@ -22,4 +22,4 @@ async function reviewFormHandler(event) {
     }
 }
 
-document.querySelector("").addEventListener("submit", reviewFormHandler);
+document.querySelector(".title is-12").addEventListener("submit", reviewFormHandler);
