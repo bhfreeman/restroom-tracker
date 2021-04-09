@@ -1,7 +1,7 @@
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    const user_name = document.querySelector(".").value;
+    const user_name = document.querySelector(".card-header").value;
     const comment_text = document.querySelector(".card-content").value;
 
     //create new comment
