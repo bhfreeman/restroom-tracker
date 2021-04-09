@@ -7,14 +7,15 @@ const searchFormHandler = async (event) => {
     const regex = new RegExp('^[A-Z]{2}$');
 
     if (city && state) {
-        if(regex.test(city)){
-            const response = await fetch(`/api/search/${city}/${state}`, {
+        if(regex.test(state)){
+          const url = `/bathroom/${city}/${state}`;
+            const response = await fetch(url, {
               method: 'GET',
             //   body: JSON.stringify({ city, state }),
               headers: { 'Content-Type': 'application/json' },
             });
             if (response.ok) {
-              console.log('successful')
+              window.location.replace(`/bathroom/${city}/${state}`)
             } else {
               alert(response.statusText);
             }

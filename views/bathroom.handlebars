@@ -1,13 +1,12 @@
 <div class="tile is-ancestor">
     <div class="tile is-parent is-8">
         {{> individual-bathroom }}
-        <div class="tile">
-            {{#each bathroom.review}}
+            {{#each reviews}}
                 {{>review}}
-                {{#each bathroom.review.comment}}
+                {{#each comments}}
                 {{>comment}}
+                {{!-- {{this.comment_text}} --}}
                 {{/each}}
             {{/each}}
-        </div>
     </div>
 </div>
