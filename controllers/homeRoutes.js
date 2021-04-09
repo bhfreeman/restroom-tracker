@@ -5,13 +5,6 @@ const withAuth = require("../utils/auth");
 // homepage
 router.get('/', async (req,res) => {
   try{
-    console.log('--------')
-    console.log('--------')
-    console.log(req.session)
-    console.log('--------')
-    console.log('--------')
-
-
     res.render("homepage",
     {logged_in: req.session.logged_in})
   }catch(err){
@@ -63,7 +56,6 @@ router.get("/profile", withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
     res.render("profile", {
       user,
       logged_in: true,
