@@ -5,3 +5,20 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+#search-button {
+    align-items: center;
+}
+
+#p-title {
+    font-size: 50px;
+}
+
+#p-content {
+    text-align:justify;
+}
+
+#name {
+    font-size: 25px;
+    font-weight: 600;
+}
