@@ -1,19 +1,20 @@
-<div class="tile is-12">
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">
+{{!-- <div class="tile is-12">
+    <div class="card"> --}}
+        <div class="column has-text-white has-background-dark has-text-centered">
+        <header class="card-header columns is-multiline ">
+            <p class="card-header-title has-text-centered column is-full has-text-white">
                 {{ business_name}}
             </p>
-            <a href="/api/search/{{id}}">
-            <div class="card-header-icon">
-                <span class="icon">
-                    <i class="fas fa-info-circle"></i>
-                </span>
-                <span class="icon-text has-text-info">
-                    <span>Info</span>
-                </span>
-            </div>
-            
+            <a href="/api/search/{{id}}" class="column is-full">
+                <div class="card-header-icon ">
+                    <div class="icon-text">
+                        <span class="icon has-text-info">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                        <span>Information</span>
+                    </div>
+                </div>
+
             </a>
         </header>
         <div class="card-content">
@@ -30,5 +31,7 @@
                 Zipcode: {{ zipcode }}
             </div>
         </div>
+        </div>
+        {{!--
     </div>
-</div>
+</div> --}}

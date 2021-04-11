@@ -1,12 +1,48 @@
-<div class="tile is-ancestor">
-    <div class="tile is-parent is-8 is-flex-wrap-wrap">
+<div class="columns column is-full">
+    <div class="columns column is-8 is-flex-wrap-wrap box">
         {{> individual-bathroom }}
-            {{#each reviews}}
-                {{>review}}
-                {{#each comments}}
-                {{>comment}}
-                {{!-- {{this.comment_text}} --}}
-                {{/each}}
-            {{/each}}
+        {{#each reviews}}
+        {{>review}}
+        {{#each comments}}
+        {{>comment}}
+        {{/each}}
+        {{/each}}
+    </div>
+    <div class="column is-one-quarter box">
+        <div class="form">
+            <div class="field block">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Enter Review Title" id="title">
+                </div>
+
+            </div>
+            <div class="field block">
+
+                <label class="label">Review Text</label>
+                <div class="control">
+                    <input class="input" type="textarea" placeholder="Enter Your Review Here" id="review-text">
+                </div>
+            </div>
+            <div class="field block">
+                <label class="label">Rating</label>
+                <div class="control">
+                    <select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field block m-4">
+                <button class="button is-primary is-focused mr-4" id="submit-review">
+                    Add Review
+                </button>
+            </div>
+        </div>
     </div>
 </div>
+
+<script src="/js/review.js"></script>

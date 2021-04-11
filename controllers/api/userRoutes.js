@@ -68,21 +68,29 @@ router.get('/comments', withAuth, async (req, res) => {
  
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/review", withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
             title: req.body.title,
-            review_text: req.body.review_text
+            review_text: req.body.review_text,
+            user_id: req.session.user_id,
+            bathroom_id: req.body.bathroom_id
             // location_type: req.body.location_type,
             // number_stalls: req.body.number_stalls,
             // ada_compliant: req.body.ada_compliant,
             // overall_rating: req.body.overall_rating
         });
-    req.session.save(() => {
-                req.session.id= newReview.id;
-                req.session.logged_in = true;
+        console.log('------')
+        console.log('------')
+        console.log('------')
+        console.log('------')
+        console.log(newReview.toJSON())
+        console.log('------')
+        console.log('------')
+        console.log('------')
 
-                res.status(200).json(newReview);
+    req.session.save(() => {
+                req.session.logged_in = true;
     })
         
     } catch(err){

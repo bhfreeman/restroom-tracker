@@ -1,25 +1,28 @@
-async function reviewFormHandler(event) {
+async function addReviewHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector(".card-header").value;
-    const review_text = document.querySelector(".card-content").value;
+    const review_title = document.querySelector('#title').value;
+    const review_text = document.querySelector('#review-text').value;
+    const reviewRating = document.querySelector('#rating').value
+    const url = window.location.href.split("/")
+    const bathroom_id = url[url.length -1];
 
-    //create new review
-    const response = await fetch(`/api/reviews`, {
-        method: "POST",
+    const response = await fetch('/api/user/review', {
+        method: 'POST',
         body: JSON.stringify({
-            title,
-            review_text
+            title: review_title,
+            review_text: review_text,
+            bathroom_id: parseInt(bathroom_id)
         }),
         headers: {
             "Content-Type": "application/json"
         }
     });
-    if (response.ok) {
-        document.location.replace("/reviews");
+    if(response.ok){
+        window.location.reload();
     } else {
         alert(response.statusText);
-    }
+}
 }
 
-document.querySelector(".title is-12").addEventListener("submit", reviewFormHandler);
+document.querySelector("#submit-review").addEventListener('click', addReviewHandler)
