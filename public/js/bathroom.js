@@ -1,4 +1,3 @@
-
 async function bathroomFormHandler(event) {
     event.preventDefault();
 
@@ -13,7 +12,7 @@ async function bathroomFormHandler(event) {
     const overall_rating = document.querySelector("overall_rating").value;
 
     //create new bathroom
-    const response = await fetch(`/api/bathroom`, {
+    const response = await fetch('/api/bathroom', {
         method: "POST",
         body: JSON.stringify({
             business_name,
