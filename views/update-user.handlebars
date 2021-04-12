@@ -1,44 +1,68 @@
-<div class="column update-user-form">
-    <div class="field">
-        <div>
-            <p class="is-size-4 p-5">Name: {{user.name}}</p>
-        </div>
+<div class="column">
+  <div>
+    <h1 class="is-size-3 mb-3 has-text-weight-bold">
+      User Profile
+    </h1>
+  </div>
+  <div class="field mt-5">
+    <div class="column update-user-form">
+      <div>
+        <p class="is-size-4 p-5">
+          Name:
+          {{user.name}}
+        </p>
+      </div>
     </div>
-
     <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Enter Email" id="email-signup">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
+      <label class="label">
+        Email
+      </label>
+      <div class="control has-icons-left has-icons-right">
+        <input
+          class="input is-danger"
+          type="email"
+          placeholder="Enter Email"
+          id="email-signup"
+        />
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </div>
     </div>
-
     <div class="field">
-        <label class="label">Password</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="password" placeholder="Enter Password" id="password-signup">
-            <span class="icon is-small is-left">
-                <i class="fas "></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas"></i>
-            </span>
-        </div>
+      <label class="label">
+        Password
+      </label>
+      <div class="control has-icons-left has-icons-right">
+        <input
+          class="input is-danger"
+          type="password"
+          placeholder="Enter Password"
+          id="password-signup"
+        />
+        <span class="icon is-small is-left">
+          <i class="fas"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas"></i>
+        </span>
+      </div>
     </div>
-
     <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-link" id="update-user-button">Submit</button>
-        </div>
-        <div class="control">
-            <button class="button is-link is-light" type="submit">Cancel</button>
-        </div>
+      <div class="control">
+        <button class="button is-link" id="update-user-button">
+          Submit
+        </button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" type="submit">
+          Cancel
+        </button>
+      </div>
     </div>
+  </div>
 </div>
-
 <script src="/js/signup.js"></script>
