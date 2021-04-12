@@ -3,9 +3,9 @@ async function commentFormHandler(event) {
 
     const user_name = document.querySelector(".card-header").value;
     const comment_text = document.querySelector(".card-content").value;
-    const url = window.location.href.split("/")
-    const bathroom_id = url[url.length -1];
-
+    // const url = window.location.href.split("/")
+    // const bathroom_id = url[url.length -1];
+    // console.log(bathroom_id)
     //create new comment
     const response = await fetch(`/api/comments`, {
         method: "POST",
@@ -19,7 +19,7 @@ async function commentFormHandler(event) {
     });
     //redirects to comments
     if (response.ok) {
-        location.href= `/api/search/${bathroom_id}`;
+        
     } else {
         alert(response.statusText);
     }
