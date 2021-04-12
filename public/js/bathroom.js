@@ -20,7 +20,7 @@ async function bathroomFormHandler(event) {
 
     console.log(`Business name: ${business_name}. Street: ${street_address}. city: ${city}. state: ${state}. zipcode: ${zipcode}. location: ${location_type}. stalls: ${number_stalls}. ada: ${ada_compliant}`)
     //create new bathroom
-  if(business_name & street_address & state & zipcode & location_type & number_stalls & ada_compliant){ 
+//   if(business_name & street_address & state & zipcode & location_type & number_stalls & ada_compliant){ 
     const response = await fetch('/api/search/create', {
         method: "POST",
         body: JSON.stringify({
@@ -37,15 +37,16 @@ async function bathroomFormHandler(event) {
             "Content-Type": "application/json"
         }
     })
+    console.log(response)
     if (response.ok) {
         // res.send(response)
         // location.reload();
-        window.location.reload();
-        return false;
+        location.href= response.url;
+
     } else {
         alert(response.statusText)
     }
-  }
+//   }
 }
 
 document.querySelector("#submit_new").addEventListener("click", bathroomFormHandler);

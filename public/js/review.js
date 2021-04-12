@@ -20,7 +20,7 @@ async function addReviewHandler(event) {
             }
         });
         if(response.ok){
-            window.location.replace(`/http://localhost:8080/api/search/${bathroom_id}`);
+            location.href= `/api/search/${bathroom_id}`;
         } else {
             alert(response.statusText);
         }

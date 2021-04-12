@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
       req.session.user_id =userData.id;
       res.status(200).json(userData);
     });
+    res.redirect('/profile')
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -75,7 +76,7 @@ router.put('/', async (req, res) => {
         id: req.session.user_id,
       },
     });
-    res.render(updatedUser);
+    res.render('profile',updatedUser);
   } catch (err) {
     res.status(500).json(err);
   }
