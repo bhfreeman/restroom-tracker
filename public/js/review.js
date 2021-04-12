@@ -43,5 +43,4 @@ function toggleCommentForm (event) {
 
 }
 
-
 document.querySelector("#submit-review").addEventListener('click', addReviewHandler)
