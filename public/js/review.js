@@ -7,7 +7,7 @@ async function addReviewHandler(event) {
     const url = window.location.href.split("/")
     const bathroom_id = url[url.length -1];
 
-    // if (review_title & review_text) {
+    if (review_title & review_text) {
         const response = await fetch('/api/user/review', {
             method: 'POST',
             body: JSON.stringify({
@@ -25,7 +25,9 @@ async function addReviewHandler(event) {
             alert(response.statusText);
         }
 
-    // }
+    } else {
+        alert("Title & Text fields cannot be empty!")
+    }
 
 }
 
