@@ -1,11 +1,11 @@
-<div class="column has-text-centered">
+<div class="column">
     <div class="content column is-full" data-id="{{id}}">
-        <h2 class="is-size-5 has-text-weight-semibold">Review</h2>
+        <h2 class="is-size-4 has-text-weight-semibold has-text-centered">Reviews & Comments</h2>
         <h4>By User: {{user.name}}</h4>
         <h4> Date: {{createdAt}} </h4>
 
     </div>
-    <div class="card column is-full has-text-centered">
+    <div class="card column is-full">
         <header class="card-header">
             <p class="card-header-title">
                 {{ title }}
@@ -26,9 +26,10 @@
         {{>comment}}
     </div>
     {{/each}}
-    <button class="button is-primary is-focused mr-4 new-comment">
+    <div class="has-text-centered">
+    <button class="button is-primary is-focused mr-4 new-comment has-text-centered">
         New Comment
-    </button>
+    </button></div>
     <div class="form" id="comment-form">
         <div class="field block">
             <label class="label">Comment Text</label>
@@ -36,8 +37,8 @@
                 <input class="input" type="textarea" placeholder="Enter Your Comment Here" id="comment-text">
             </div>
         </div>
-        <div class="field block m-4">
-            <button class="button is-primary is-focused mr-4 submit-comment">
+        <div class="field block m-4 has-text-centered">
+            <button class="button is-primary is-focused mr-4 submit-comment ">
                 Add Comment
             </button>
         </div>
