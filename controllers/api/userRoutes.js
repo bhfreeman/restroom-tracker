@@ -79,6 +79,7 @@ router.post('/comments', withAuth, async (req,res) => {
     req.session.save(() => {
       req.session.logged_in = true;
     })
+    res.redirect('/api/search')
   } catch {
     res.status(500).json(err);
   }
@@ -96,21 +97,10 @@ router.post("/review", withAuth, async (req, res) => {
             // ada_compliant: req.body.ada_compliant,
             // overall_rating: req.body.overall_rating
         });
-
-        console.log('---------')
-        console.log('---------')
-        console.log('---------')
-        console.log('???')
-        console.log(newReview)
-        console.log('---------')
-        console.log('---------')
-        console.log('---------')
-
-
     req.session.save(() => {
       req.session.logged_in = true;
     })
-        
+    res.redirect('/api/search')
     } catch(err){
         res.status(500).json(err);
     }
