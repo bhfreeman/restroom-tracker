@@ -89,10 +89,7 @@ submitCommentBtn.forEach((btn) => {
     }
 })
 
-<<<<<<< HEAD
 document.querySelector('#submit-review').addEventListener('click', addReviewHandler)
 
 // document.querySelector('.submit-comment').addEventListener('click', addCommentHandler)
-=======
-document.querySelector("#submit-review").addEventListener('click', addReviewHandler)
->>>>>>> e9ced8dfd72bae4fed0c7850bd8a2eee03e2228b
+
