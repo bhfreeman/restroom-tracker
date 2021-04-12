@@ -1,7 +1,8 @@
 <div class="column columns is-multiline m-2 is-5 box">
-    <div class="content column is-full">
+    <div class="content column is-full" data-id="{{id}}">
         <h2>Review</h2>
-        
+        <h4>By User: {{user.name}}</h4>
+
     </div>
     <div class="card column is-full">
         <header class="card-header">
@@ -16,48 +17,27 @@
         </div>
     </div>
     <div class="content has-text-centered column is-full ">
-        <h5>Comments</h5>
-        <button class="button is-primary is-focused mr-4" id="add-comment">
-            Add Comment
-        </button>
-                <div class="form" id="comment-form">
-            <div class="field block">
-                <label class="label">Title</label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="Enter Review Title" id="title">
-                </div>
-
-            </div>
-            <div class="field block">
-
-                <label class="label">Review Text</label>
-                <div class="control">
-                    <input class="input" type="textarea" placeholder="Enter Your Review Here" id="review-text">
-                </div>
-            </div>
-            <div class="field block">
-                <label class="label">Rating</label>
-                <div class="control">
-                    <select name="rating" id="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-            </div>
-            <div class="field block m-4">
-                <button class="button is-primary is-focused mr-4" id="submit-review">
-                    Add Review
-                </button>
-            </div>
-        </div>
-
+        <h5 class="m-1">Comments</h5>
     </div>
     {{#each comments}}
     <div class="column is-8 is-offset-2">
         {{>comment}}
     </div>
     {{/each}}
+    <button class="button is-primary is-focused mr-4 new-comment">
+        New Comment
+    </button>
+    <div class="form" id="comment-form">
+        <div class="field block">
+            <label class="label">Comment Text</label>
+            <div class="control">
+                <input class="input" type="textarea" placeholder="Enter Your Comment Here" id="comment-text">
+            </div>
+        </div>
+        <div class="field block m-4">
+            <button class="button is-primary is-focused mr-4 submit-comment">
+                Add Comment
+            </button>
+        </div>
+    </div>
 </div>
