@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+{{!-- <div class="tile is-12" id="bathroomForm"> --}}
+    <h2>If you didn't find the restroom you were looking for, create one here so you and others can review it.</h2>
+    <h3>Enter the name of the business, street address, city, state(using the two-letter state code), and zipcode.</h3>
+    {{!-- <input class="input" id="business_name" type="text" placeholder="Business Name"> --}}
+    {{!-- <input class="input" id="street_address" type="text" placeholder="Street Address"> --}}
+    {{!-- <input class="input" id="city" type="text" placeholder="City"> --}}
+    {{!-- <input class="input" id="state" type="text" placeholder="State"> --}}
+    {{!-- <input class="input" id="zipcode" type="text" placeholder="Zipcode"> --}}
+=======
 <div id="bathroomForm">
     <h1>If you didn't find the restroom you were looking for, create one here so you and others can review it.</h1>
     <h3>Enter the name of the business, street address, city, state(using the two-letter state code), and zipcode.</h3>
@@ -6,8 +16,9 @@
     <input class="input" id="city" type="text" placeholder="City">
     <input class="input" id="state" type="text" placeholder="State">
     <input class="input" id="zipcode" type="text" placeholder="Zipcode">
+>>>>>>> 5a98d5032db702b9ddafb0be5fed7bbeb9907349
 
-    <div class="card-content">
+    {{!-- <div class="card-content">
         <div class="content">
             <p> What kind of place is the restroom located in? </p>
         </div>
@@ -22,56 +33,128 @@
                 <option value="rest_area">Rest Area</option>
                 <option value="park">Recreational (National, State, Neighborhood Parks</option>
             </select>
+        </div> --}}
+        {{!-- <div class="card-content">
+            <div class="content">
+                <p> How many stalls, if any? </p>
+            </div>
+            <div class="select is-multiple">
+                <select id="number_stalls">
+                    <option value="0">0 - single person</option>
+                    <option value="1">1</option>
+                    <option value="2">2 or more</option>
+                </select>
+            </div> --}}
+
+        {{!-- </div>
+        <div class="card-content" id="ada_compliant">
+            <div class="content">
+                <p>Check boxes if ADA amenities are available</p>
+            </div>
+            <label class="checkbox">
+                <input type="checkbox">
+                Large Stalls
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                Ramps
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                Automatic Door Opener/Button
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                Low Sinks
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                Low Hand Drying Options
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                Low Toilet Seat
+            </label>
         </div>
-    <div class="card-content">
-        <div class="content">
-            <p> How many stalls, if any? </p>
+        <div class="field block m-4">
+            <button class="button is-primary is-focused mr-4" id="submit-new">
+                Submit New Bathroom
+            </button>
         </div>
-        <div class="select is-multiple">
+    </div>
+</div>
+</div> --}}
+
+<div class="form" id="bathroom-form">
+    <div class="field block">
+        <label class="label">Business Name</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Business Name" id="business_name">
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">Street Address</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Street Address" id="street_address">
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">City</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="City" id="city">
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">State</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="2 Digit State Code" id="state">
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">Zipcode</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Zipcode" id="zipcode">
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">Location Type</label>
+        <div class="control">
+            <select id="location_type">
+                <option value="public">Public/Not attached to a business</option>
+                <option value="restaurant">Restaurant/Bar</option>
+                <option value="retailer">Retailer</option>
+                <option value="gas_station">Gas Station</option>
+                <option value="transportation">Transportation (Bus, Train, Airplane)</option>
+                <option value="entertainment">Entertainment (Casino, Theater, Arcade)</option>
+                <option value="rest_area">Rest Area</option>
+                <option value="park">Recreational (National, State, Neighborhood Parks</option>
+            </select>
+        </div>
+    </div>
+    <div class="field block">
+        <label class="label">Number of Stalls</label>
+        <div class="control">
             <select id="number_stalls">
                 <option value="0">0 - single person</option>
                 <option value="1">1</option>
                 <option value="2">2 or more</option>
             </select>
         </div>
-
     </div>
-    <div class="card-content" id="ada_compliant">
-        <div class="content">
-            <p>Check boxes if ADA amenities are available</p>
+    <div class="field block">
+        <div class="control">
+        <label class="label">ADA Compliant?</label>
+                <input type="checkbox" id="ada_compliant">
+                True
         </div>
-        <label class="checkbox">
-            <input type="checkbox">
-            Large Stalls
-        </label>
-        <label class="checkbox">
-            <input type="checkbox">
-            Ramps
-        </label>
-        <label class="checkbox">
-            <input type="checkbox">
-            Automatic Door Opener/Button
-        </label>
-        <label class="checkbox">
-            <input type="checkbox">
-            Low Sinks
-        </label>
-        <label class="checkbox">
-            <input type="checkbox">
-            Low Hand Drying Options
-        </label>
-        <label class="checkbox">
-            <input type="checkbox">
-            Low Toilet Seat
-        </label>
     </div>
+
+
     <div class="field block m-4">
-        <button class="button is-primary is-focused mr-4" id="submit-new">
+        <button class="button is-primary is-focused mr-4" id="submit_new">
             Submit New Bathroom
         </button>
     </div>
-</div>
-</div>
 </div>
 
 <script src="/js/bathroom.js"></script>

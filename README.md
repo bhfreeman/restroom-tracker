@@ -6,6 +6,9 @@
 ```md
 A user driven bathroom rating app. Users can add bathrooms, rate them, leave comments, etc.
 ```
+## Heroku Deployment Link
+[Heroku](https://bathroom-buddy-v1.herokuapp.com/)
+
 ## User Story/ Motivation for development
 ```md
 Ever in a new place and have an intestinal emergency? Want to know which stores around you have a nice bathroom to relieve yourself in peace? (NAME) is a user driven app for you to find the best bathroom in your vicinity!
