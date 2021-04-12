@@ -48,7 +48,7 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// create bathroom
 router.post("/", withAuth, async (req, res) => {
   try {
     const bathroomData = await Bathroom.create(req.body);
@@ -57,7 +57,7 @@ router.post("/", withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+// delete a bathroom
 router.delete("/:id", async (req, res) => {
   try {
     const bathroomData = await Bathroom.destroy({
