@@ -39,4 +39,4 @@ async function bathroomFormHandler(event) {
 }
 
 
-document.querySelector("#bathroomForm").addEventListener("submit", bathroomFormHandler);
+document.querySelector("#submit-new").addEventListener("click", bathroomFormHandler);

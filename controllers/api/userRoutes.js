@@ -90,6 +90,11 @@ router.post("/review", withAuth, async (req, res) => {
     }
 });
 
+
+router.get("/signup", async (req, res) => {
+  res.render("signup");
+});
+
 // Logout
 router.post('/logout', withAuth, (req, res) => {
     if (req.session.loggedIn) {
