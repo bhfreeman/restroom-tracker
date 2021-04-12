@@ -1,10 +1,11 @@
-<div class="column columns is-multiline m-2 is-5 box">
+<div class="column has-text-centered">
     <div class="content column is-full" data-id="{{id}}">
-        <h2>Review</h2>
+        <h2 class="is-size-5 has-text-weight-semibold">Review</h2>
         <h4>By User: {{user.name}}</h4>
+        <h4> Date: {{createdAt}} </h4>
 
     </div>
-    <div class="card column is-full">
+    <div class="card column is-full has-text-centered">
         <header class="card-header">
             <p class="card-header-title">
                 {{ title }}
@@ -15,6 +16,7 @@
                 <p>{{ review_text }}</p>
             </div>
         </div>
+        
     </div>
     <div class="content has-text-centered column is-full ">
         <h5 class="m-1">Comments</h5>

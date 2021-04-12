@@ -1,8 +1,12 @@
 <div class="columns column is-full">
-    <div class="columns column is-8 is-flex-wrap-wrap">
-        <div class="columns column is-flex-wrap-wrap is-multiline">
+    <div class="column">
+      <div>
+          <h1 class="is-size-3 mb-3 has-text-weight-bold">Search Results</h1>
+          </div>
+    <div class="columns column is-full is-flex-wrap-wrap">
+        
             {{> individual-bathroom }}
-            <div class="columns column is-flex-wrap-wrap is-offset-1">
+            <div class="columns column is-flex-wrap-wrap is-offset-1 is-multiline m-2 is-5 box ml-4">
                 {{#each bathroom.reviews}}
                 {{>review}}
                 {{!-- <div class="column"> --}}
@@ -12,8 +16,7 @@
                 </div> --}}
                 {{/each}}
             </div>
-        </div>
-    </div>
+        
     <div class="column is-one-quarter box m-2">
         <div class="form">
             <div class="field block">
@@ -48,6 +51,8 @@
                 </button>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </div>
 
