@@ -60,10 +60,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 // create bathroom
-router.post("/", withAuth, async (req, res) => {
+router.post("/create", withAuth, async (req, res) => {
   try {
+    console.log('--------')
+    console.log('--------')
+    console.log('--------')
+    console.log('--------')
+    console.log(req.body)
+    console.log('--------')
+    console.log('--------')
+    console.log('--------')
     const bathroomData = await Bathroom.create(req.body);
-    res.render(bathroomData);
+    res.redirect('/');
   } catch (err) {
     res.status(400).json(err);
   }
