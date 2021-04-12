@@ -9,7 +9,11 @@ async function reviewFormHandler(event) {
         method: "POST",
         body: JSON.stringify({
             title,
-            review_text
+            review_text,
+            location_type,
+            number_stalls,
+            ada_compliant,
+            overall_rating
         }),
         headers: {
             "Content-Type": "application/json"

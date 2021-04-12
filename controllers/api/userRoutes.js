@@ -68,21 +68,21 @@ router.get('/comments', withAuth, async (req, res) => {
  
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/api/reviews", withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
             title: req.body.title,
-            review_text: req.body.review_text
-            // location_type: req.body.location_type,
-            // number_stalls: req.body.number_stalls,
-            // ada_compliant: req.body.ada_compliant,
-            // overall_rating: req.body.overall_rating
+            review_text: req.body.review_text,
+            location_type: req.body.location_type,
+            number_stalls: req.body.number_stalls,
+            ada_compliant: req.body.ada_compliant,
+            overall_rating: req.body.overall_rating
         });
     req.session.save(() => {
                 req.session.id= newReview.id;
                 req.session.logged_in = true;
 
-                res.status(200).json(newReview);
+                res.render(newReview);
     })
         
     } catch(err){
