@@ -1,3 +1,4 @@
+
 async function bathroomFormHandler(event) {
     event.preventDefault();
 
@@ -36,5 +37,6 @@ async function bathroomFormHandler(event) {
         alert(response.statusText)
     }
 }
+
 
 document.querySelector("#bathroomForm").addEventListener("submit", bathroomFormHandler);

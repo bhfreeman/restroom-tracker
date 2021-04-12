@@ -68,21 +68,21 @@ router.get('/comments', withAuth, async (req, res) => {
  
 });
 
-router.post("/api/reviews", withAuth, async (req, res) => {
+router.post("/review", withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
             title: req.body.title,
             review_text: req.body.review_text,
-            location_type: req.body.location_type,
-            number_stalls: req.body.number_stalls,
-            ada_compliant: req.body.ada_compliant,
-            overall_rating: req.body.overall_rating
+            user_id: req.session.user_id,
+            bathroom_id: req.body.bathroom_id
+            // location_type: req.body.location_type,
+            // number_stalls: req.body.number_stalls,
+            // ada_compliant: req.body.ada_compliant,
+            // overall_rating: req.body.overall_rating
         });
-    req.session.save(() => {
-                req.session.id= newReview.id;
-                req.session.logged_in = true;
 
-                res.render(newReview);
+    req.session.save(() => {
+                req.session.logged_in = true;
     })
         
     } catch(err){
@@ -100,6 +100,10 @@ router.post('/logout', withAuth, (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.get('*', (req, res) => {
+    res.status(404)
+  })
 
 module.exports = router;
 
