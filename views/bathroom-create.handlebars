@@ -1,102 +1,126 @@
-<div class="column login-form">
-    <div class="field">
-        <label class="label">Business Name</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="business" placeholder="Enter a Business Name" id="business_name">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
+<div class="tile is-12" id="bathroomForm">
+    <h2>If you didn't find the restroom you were looking for, create one here so you and others can review it.</h2>
+    <div class="card-content">
+        <div class="content">
+            <p> What kind of place is the restroom located in? </p>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Click me</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        Public/Not attached to a business
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Restaurant/Bar
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Retailer
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Gas Station
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Transportation (Bus, Train, Airplane)
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Entertainment (Casino, Theater, Arcade)
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Rest Area
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        National/State Park
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="field">
-        <label class="label">Street Address</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="address" placeholder="Street Address" id="street_address">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
+    <div class="card-content" id="number_stalls">
+        <div class="content">
+            <p> How many stalls, if any? </p>
         </div>
-    </div>
-    <div class="field">
-        <label class="label">City</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="city" placeholder="City" id="city">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Zipcode</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Zipcode" id="zipcode">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Location Type</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="location" placeholder="Location" id="location_type">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Number of Stalls</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="stalls" placeholder="Number of Stalls" id="number_stalls">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div><div class="field">
-        <label class="label">ADA Compliant</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="ada" placeholder="ADA Compliant" id="ada_compliant">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Rating</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="rating" placeholder="Rating" id="overall_rating">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
-        </div>
-    </div>
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Click me</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        0 - Single person bathroom
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        1
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        2 or more
+                    </a>
 
-
-
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-content" id="ada_compliant">
+        <div class="content">
+            <p>Check boxes if ADA amenities are available</p>
+        </div>
+        <label class="checkbox">
+            <input type="checkbox">
+            Large Stalls
+        </label><label class="checkbox">
+            <input type="checkbox">
+            Ramps
+        </label>
+        <label class="checkbox">
+            <input type="checkbox">
+            Automatic Door Opener/Button
+        </label>
+        <label class="checkbox">
+            <input type="checkbox">
+            Low Sinks
+        </label>
+        <label class="checkbox">
+            <input type="checkbox">
+            Low Hand Drying Options
+        </label>
+    </div>
+    <div class="card-content" id="overall_rating">
+        <p>Overall, how would you rate this restroom?</p>
+        <label class="radio">
+            <input type="radio" name="answer">
+            1 - Awful
+        </label>
+        <label class="radio">
+            <input type="radio" name="answer">
+            2 - Go Cautiously
+        </label>
+        <label class="radio">
+            <input type="radio" name="answer">
+            3 - It's fine
+        </label>
+        <label class="radio">
+            <input type="radio" name="answer">
+            4 - Needs a little tinkering
+        </label>
+        <label class="radio">
+            <input type="radio" name="answer">
+            5 - Safe for grandma to use
+        </label>
+    </div>
+</div>
 </div>
 
 <script src="./js/login.js"></script>

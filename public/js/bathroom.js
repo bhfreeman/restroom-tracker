@@ -37,4 +37,4 @@ async function bathroomFormHandler(event) {
     }
 }
 
-document.querySelector("field").addEventListener("submit", bathroomFormHandler);
+document.querySelector("#bathroomForm").addEventListener("submit", bathroomFormHandler);
