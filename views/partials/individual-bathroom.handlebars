@@ -1,36 +1,63 @@
 {{!-- <div class="tile is-12">
     <div class="card"> --}}
         <div class="has-text-white has-background-dark has-text-centered">
-        <header class="card-header columns is-multiline ">
-            <p class="card-header-title has-text-centered column is-full has-text-white">
-                {{ business_name}}
-            </p>
-            <a href="/api/search/{{id}}" class="column is-full">
-                <div class="card-header-icon ">
-                    <div class="icon-text">
-                        <span class="icon has-text-info">
-                            <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span>Information</span>
+            <header class="card-header columns is-multiline ">
+                <p class="card-header-title has-text-centered column is-full has-text-white">
+                    {{#if bathroom}}
+                    {{ bathroom.business_name}}
+                    {{else}}
+                    {{business_name}}
+                    {{/if}}
+                </p>
+                {{#if bathroom}}
+                <a href="/api/search/{{bathroom.id}}" class="column is-full">
+                {{else}}
+                <a href="/api/search/{{id}}" class="column is-full">
+                {{/if}}
+                    <div class="card-header-icon ">
+                        <div class="icon-text">
+                            <span class="icon has-text-info">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span>Information</span>
+                        </div>
                     </div>
-                </div>
 
-            </a>
-        </header>
-        <div class="card-content">
-            <div class="content">
-                Rating: {{ overall_rating }}
+                </a>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    {{#if bathroom}}
+                    Rating: {{ bathroom.overall_rating }}
+                    {{else}}
+                    Rating: {{ overall_rating }}
+                    {{/if}}
+                </div>
+                <div class="content">
+                    {{#if bathroom}}
+                    Street Address: {{ bathroom.street_address }}
+                    {{else}}
+                    Street Address: {{ street_address }}
+                    {{/if}}
+
+                </div>
+                <div class="content">
+                    {{#if bathroom}}
+                    City: {{ bathroom.city }}, State: {{ bathroom.state }}
+                    {{else}}
+                    City: {{ city }}, State: {{ state }}
+                    {{/if}}
+
+                </div>
+                <div class="content">
+                    {{#if bathroom}}
+                    Zipcode: {{ bathroom.zipcode }}
+                    {{else}}
+                    Zipcode: {{ zipcode }}
+                    {{/if}}
+
+                </div>
             </div>
-            <div class="content">
-                Street Address: {{ street_address }}
-            </div>
-            <div class="content">
-                City: {{ city }}, State: {{ state }}
-            </div>
-            <div class="content">
-                Zipcode: {{ zipcode }}
-            </div>
-        </div>
         </div>
         {{!--
     </div>

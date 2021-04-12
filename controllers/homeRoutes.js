@@ -35,11 +35,24 @@ router.get("/bathroom/:city/:state", async (req, res) => {
       bathroom.get({ plain: true })
     );
 
+    console.log('----')
+    console.log('----')
+    console.log('----')
+    console.log(bathrooms[0])
+    console.log('----')
+    console.log('----')
+    console.log('----')
+
+
     // Pass serialized data and session flag into template
     res.render("search-results", {
       bathrooms,
       logged_in: req.session.logged_in,
     });
+    // res.send({
+    //     bathrooms,
+    //     logged_in: req.session.logged_in,
+    //   })
   } catch (err) {
     res.status(500).json(err);
   }
