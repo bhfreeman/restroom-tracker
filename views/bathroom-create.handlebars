@@ -1,10 +1,29 @@
 <div class="tile is-12" id="bathroomForm">
     <h2>If you didn't find the restroom you were looking for, create one here so you and others can review it.</h2>
+    <h3>Enter the name of the business, street address, city, state(using the two-letter state code), and zipcode.</h3>
+    <input class="input" id="business_name" type="text" placeholder="Business Name">
+    <input class="input" id="steet_address" type="text" placeholder="Street Address">
+    <input class="input" id="city" type="text" placeholder="City">
+    <input class="input" id="state" type="text" placeholder="State">
+    <input class="input" id="zipcode" type="text" placeholder="Zipcode">
+
     <div class="card-content">
         <div class="content">
             <p> What kind of place is the restroom located in? </p>
         </div>
-        <div class="dropdown">
+        <div class="select is-multiple">
+            <select multiple size="8" id="location_type">
+                <option value="public">Public/Not attached to a business</option>
+                <option value="restaurant">Restaurant/Bar</option>
+                <option value="retailer">Retailer</option>
+                <option value="gas_station">Gas Station</option>
+                <option value="transportation">Transportation (Bus, Train, Airplane)</option>
+                <option value="entertainment">Entertainment (Casino, Theater, Arcade)</option>
+                <option value="rest_area">Rest Area</option>
+                <option value="park">Recreational (National, State, Neighborhood Parks</option>
+            </select>
+        </div>
+        {{!-- <div class="dropdown">
             <div class="dropdown-trigger">
                 <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>Click me</span>
@@ -43,12 +62,19 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card-content" id="number_stalls">
+    </div> --}}
+    <div class="card-content">
         <div class="content">
             <p> How many stalls, if any? </p>
         </div>
-        <div class="dropdown">
+        <div class="select is-multiple">
+            <select multiple size="8" id="number_stalls">
+                <option value="0">0 - single person</option>
+                <option value="1">1</option>
+                <option value="2">2 or more</option>
+            </select>
+        </div>
+        {{!-- <div class="dropdown">
             <div class="dropdown-trigger">
                 <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>Click me</span>
@@ -71,7 +97,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="card-content" id="ada_compliant">
         <div class="content">
@@ -80,7 +106,8 @@
         <label class="checkbox">
             <input type="checkbox">
             Large Stalls
-        </label><label class="checkbox">
+        </label>
+        <label class="checkbox">
             <input type="checkbox">
             Ramps
         </label>
@@ -110,4 +137,4 @@
 </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="/js/bathroom.js"></script>
