@@ -79,7 +79,7 @@ router.post('/comments', withAuth, async (req,res) => {
     req.session.save(() => {
       req.session.logged_in = true;
     })
-    res.redirect('/api/search')
+    res.redirect('/')
   } catch {
     res.status(500).json(err);
   }

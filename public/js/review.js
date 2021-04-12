@@ -77,8 +77,7 @@ submitCommentBtn.forEach((btn) => {
                 }
             });
             if(response.ok){
-                window.location.replace(`/http://localhost:8080/api/search/${bathroom_id}`);
-                return false;
+                window.location.href =`/api/search/${bathroom_id}`;
             } else {
                 alert(response.statusText);
             }

@@ -34,16 +34,6 @@ router.get("/bathroom/:city/:state", async (req, res) => {
     const bathrooms = bathroomData.map((bathroom) =>
       bathroom.get({ plain: true })
     );
-
-    console.log('----')
-    console.log('----')
-    console.log('----')
-    console.log(bathrooms[0])
-    console.log('----')
-    console.log('----')
-    console.log('----')
-
-
     // Pass serialized data and session flag into template
     res.render("search-results", {
       bathrooms,
