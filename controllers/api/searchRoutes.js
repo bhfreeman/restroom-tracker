@@ -14,6 +14,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/create", async (req, res) => {
+  try {
+    res.render('bathroom-create', {
+      logged_in: req.session.logged_in,
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const bathroomData = await Bathroom.findByPk(req.params.id, {
@@ -52,7 +62,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   try {
     const bathroomData = await Bathroom.create(req.body);
-    res.status(200).json(bathroomData);
+    res.render(bathroomData);
   } catch (err) {
     res.status(400).json(err);
   }
