@@ -32,8 +32,16 @@ router.get("/:id", async (req, res) => {
         ],
       },
     });
-
+    
     const bathroom = bathroomData.get({ plain: true });
+    // console.log('--------')
+    // console.log('--------')
+    // console.log('--------')
+    // console.log('--------')
+    // console.log(bathroom)
+    // console.log('--------')
+    // console.log('--------')
+    // console.log('--------')
     res.render("bathroom", bathroom);
     // res.status(200).json(bathroomData);
   } catch (err) {

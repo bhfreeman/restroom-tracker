@@ -22,3 +22,6 @@
     font-size: 25px;
     font-weight: 600;
 }
+#comment-form {
+    display: none;
+}
