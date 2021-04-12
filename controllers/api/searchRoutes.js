@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
     const bathroomData = await Bathroom.findAll({});
     // Serialize user data so templates can read it
     const bathroom = bathroomData.map((bathroom) => bathroom.get({plain: true}))
-    res.render('search-results', bathroom)
+    res.render('search-results', {bathroom, logged_in: req.session.logged_in})
   } catch (err) {
     res.status(500).json(err);
   }
@@ -42,6 +42,7 @@ router.get("/:id", async (req, res) => {
         ],
       },
     });
+
     
     const bathroom = bathroomData.get({ plain: true });
     // console.log('--------')
@@ -52,7 +53,7 @@ router.get("/:id", async (req, res) => {
     // console.log('--------')
     // console.log('--------')
     // console.log('--------')
-    res.render("bathroom", bathroom);
+    res.render("bathroom", {bathroom, logged_in: req.session.logged_in});
     // res.status(200).json(bathroomData);
   } catch (err) {
     res.status(500).json(err);

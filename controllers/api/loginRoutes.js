@@ -67,7 +67,19 @@ router.post('/login', async (req, res) => {
   }
 });
 
-
+// update user info
+router.put('/', async (req, res) => {
+  try {
+    const updatedUser = await User.update({email: req.body.email} , {
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    res.render(updatedUser);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 // Logout
 router.post('/logout', (req, res) => {

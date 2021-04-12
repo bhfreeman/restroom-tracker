@@ -68,6 +68,22 @@ router.get('/comments', withAuth, async (req, res) => {
  
 });
 
+router.post('/comments', withAuth, async (req,res) => {
+  try{
+    const newComment = await Comment.create({
+      comment_text: req.body.comment_text,
+      user_id: req.session.user_id,
+      review_id: req.body.review_id
+    })
+
+    req.session.save(() => {
+      req.session.logged_in = true;
+    })
+  } catch {
+    res.status(500).json(err);
+  }
+})
+
 router.post("/review", withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
@@ -81,8 +97,18 @@ router.post("/review", withAuth, async (req, res) => {
             // overall_rating: req.body.overall_rating
         });
 
+        console.log('---------')
+        console.log('---------')
+        console.log('---------')
+        console.log('???')
+        console.log(newReview)
+        console.log('---------')
+        console.log('---------')
+        console.log('---------')
+
+
     req.session.save(() => {
-                req.session.logged_in = true;
+      req.session.logged_in = true;
     })
         
     } catch(err){
