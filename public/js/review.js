@@ -35,5 +35,13 @@ async function addCommentHandler (event) {
     const
 }
 
+function toggleCommentForm (event) {
+    event.preventDefault();
+
+    const form = document.querySelector('#comment-form')
+    form.style
+
+}
+
 
 document.querySelector("#submit-review").addEventListener('click', addReviewHandler)
