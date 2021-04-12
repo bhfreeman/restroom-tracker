@@ -1,4 +1,4 @@
-const signupFormHandler = async (event) => {
+const updateuserFormHandler = async (event) => {
     event.preventDefault();
   
     const name = document.querySelector('#name-signup').value.trim();
@@ -7,7 +7,7 @@ const signupFormHandler = async (event) => {
   
     if (name && email && password) {
       const response = await fetch('/api/login', {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
@@ -22,4 +22,4 @@ const signupFormHandler = async (event) => {
 
   document
   .querySelector('#submit-button')
-  .addEventListener('click', signupFormHandler);
+  .addEventListener('click', upateUserFormHandler);
