@@ -49,7 +49,7 @@ const submitCommentBtn = document.querySelectorAll('.submit-comment')
 // }
 newCommentBtn.forEach( (btn) => {
     btn.onclick = function(){
-        let element = btn.parentElement.children;
+        let element = btn.parentElement.parentElement.children;
         let fieldElement = element[element.length-1]
         fieldElement.style.display = "block";
     }
