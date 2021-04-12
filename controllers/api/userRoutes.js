@@ -80,14 +80,6 @@ router.post("/review", withAuth, async (req, res) => {
             // ada_compliant: req.body.ada_compliant,
             // overall_rating: req.body.overall_rating
         });
-        console.log('------')
-        console.log('------')
-        console.log('------')
-        console.log('------')
-        console.log(newReview.toJSON())
-        console.log('------')
-        console.log('------')
-        console.log('------')
 
     req.session.save(() => {
                 req.session.logged_in = true;
@@ -108,6 +100,10 @@ router.post('/logout', withAuth, (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.get('*', (req, res) => {
+    res.status(404)
+  })
 
 module.exports = router;
 

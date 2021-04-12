@@ -1,14 +1,20 @@
 <div class="columns column is-full">
-    <div class="columns column is-8 is-flex-wrap-wrap box">
-        {{> individual-bathroom }}
-        {{#each reviews}}
-        {{>review}}
-        {{#each comments}}
-        {{>comment}}
-        {{/each}}
-        {{/each}}
+    <div class="columns column is-8 is-flex-wrap-wrap">
+        <div class="columns column is-flex-wrap-wrap is-multiline">
+            {{> individual-bathroom }}
+            <div class="columns column is-flex-wrap-wrap is-offset-1">
+                {{#each reviews}}
+                {{>review}}
+                {{!-- <div class="column"> --}}
+                {{!-- {{#each comments}}
+                {{>comment}}
+                {{/each}}
+                </div> --}}
+                {{/each}}
+            </div>
+        </div>
     </div>
-    <div class="column is-one-quarter box">
+    <div class="column is-one-quarter box m-2">
         <div class="form">
             <div class="field block">
                 <label class="label">Title</label>
