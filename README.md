@@ -2,6 +2,11 @@
 
 # Bathroom Buddy? Rate that Restroom? Toilets Around Town?
 
+## About
+```md
+A user data driven bathroom rating web application.Technologies used are node.js, Express, Handlebars, MySQL & Sequelize and individual API.
+```
+
 ## Description
 ```md
 A user driven bathroom rating app. Users can add bathrooms, rate them, leave comments, etc.
